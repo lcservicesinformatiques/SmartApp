@@ -1,0 +1,27 @@
+﻿<Window x:Class="SmartApp.PurshaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartApp"
+        mc:Ignorable="d"
+        Title="Purshase" Height="451" Width="303" Loaded="PurshaseWindow_Loaded" FontFamily="Calibri" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Expiration date" HorizontalAlignment="Left" Height="33" Margin="44,72,0,0" VerticalAlignment="Top" Width="211" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="SubmitButton" Content="Submit" Margin="0,360,160,0" IsDefault="True" Click="SubmitButton_Click" HorizontalAlignment="Right" Width="95" Height="46" VerticalAlignment="Top" />
+        <Button Content="Cancel" Margin="0,360,36,0" IsCancel="True" HorizontalAlignment="Right" Width="95" Height="46" VerticalAlignment="Top" />
+        <Label Content="Credit Card Number" HorizontalAlignment="Left" Height="33" Margin="44,0,0,0" VerticalAlignment="Top" Width="211" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="CreditCardNumberTextBox1" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="44,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="4" AcceptsReturn="False" />
+        <TextBox x:Name="CreditCardNumberTextBox2" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="98,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="4" AcceptsReturn="False" />
+        <TextBox x:Name="CreditCardNumberTextBox3" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="152,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="4" AcceptsReturn="False" />
+        <TextBox x:Name="CreditCardNumberTextBox4" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="207,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="4" AcceptsReturn="False" />
+        <TextBox x:Name="CreditCardMonthTextBox" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="98,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="2" AcceptsReturn="False" />
+        <TextBox x:Name="CreditCardYearTextBox" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="152,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="4" AcceptsReturn="False" />
+        <Label Content="CVV" HorizontalAlignment="Left" Height="33" Margin="44,145,0,0" VerticalAlignment="Top" Width="211" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="CreditCardCVVTextBox" PreviewTextInput="NumericTextBox_PreviewTextInput" TextChanged="CreditCardNumberTextBox_TextChanged" HorizontalAlignment="Left" Height="21" Margin="127,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="48" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="3" AcceptsReturn="False" />
+        <Label Content="Card holder name" HorizontalAlignment="Left" Height="33" Margin="44,222,0,0" VerticalAlignment="Top" Width="211" HorizontalContentAlignment="Center"/>
+        <TextBox x:Name="CreditCardNameTextBox" PreviewTextInput="NoDigitsTextBox_PreviewTextInput" HorizontalAlignment="Left" Margin="44,263,0,0" TextWrapping="Wrap" Text="" Width="211" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLength="100" AcceptsReturn="False" Height="21" VerticalAlignment="Top" />
+        <Label x:Name="PriceLabel" Content="" HorizontalAlignment="Left" Height="33" Margin="44,310,0,0" VerticalAlignment="Top" Width="211" HorizontalContentAlignment="Center" FontWeight="UltraBold" FontSize="16"/>
+    </Grid>
+</Window>

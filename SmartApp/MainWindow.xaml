@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SmartApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Smart App" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        Loaded="MainWindow_Loaded" FontFamily="Calibri" ResizeMode="CanMinimize">
+    <Grid Margin="0,-1,0,1" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="73*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox ItemsSource="{Binding Categories}"
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedCategory}" 
+                  x:Name="CategoriesCombo" HorizontalAlignment="Left" Margin="108,16,0,0" VerticalAlignment="Top" Width="169" Height="47" SelectionChanged="CategoriesCombo_SelectionChanged" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" ToolTip="Category" VerticalContentAlignment="Center"/>
+        <ComboBox ItemsSource="{Binding Products}"
+            SelectedItem="{Binding SelectedProduct}" 
+            x:Name="ProductsCombo" HorizontalAlignment="Left" Margin="182,16,0,0" VerticalAlignment="Top" Width="284" Height="47" SelectionChanged="ProductsCombo_SelectionChanged" Grid.Column="1" ToolTip="Product">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="64" Height="64" Source="{Binding Thumbnail}" />
+                        <TextBlock Text="{Binding Title}" Margin="20,15,0,0" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Text="{Binding Description}" x:Name="DescriptionLabel"
+                   HorizontalAlignment="Left" Height="45" Margin="138,79,0,0" VerticalAlignment="Top" Width="260" ToolTip="Descption" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Label Content="Category :" HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <Label Content="Product :" HorizontalAlignment="Left" Margin="81,27,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" Height="25" Grid.Column="1" FontWeight="Bold"/>
+        <Label Content="Desciption :" HorizontalAlignment="Left" Margin="35,81,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <Label Content="Price :" HorizontalAlignment="Left" Margin="35,134,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <TextBlock Text="{Binding Price, StringFormat={}{0:F2}$}" x:Name="PriceLabel"
+            HorizontalAlignment="Left" Height="24" Margin="138,140,0,0" VerticalAlignment="Top" Width="108" ToolTip="Price" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Label Content="Discount percentage :" HorizontalAlignment="Left" Margin="7,166,0,0" VerticalAlignment="Top" Width="118" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <TextBlock Text="{Binding DiscountPercentage, StringFormat={}{0:F2}%}" x:Name="DiscountLabel"
+            HorizontalAlignment="Left" Height="24" Margin="138,172,0,0" VerticalAlignment="Top" Width="108" ToolTip="Discount percentage" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Label Content="Rating :" HorizontalAlignment="Left" Margin="7,202,0,0" VerticalAlignment="Top" Width="118" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <TextBlock Text="{Binding Rating, StringFormat={}{0:F2}}" x:Name="RatingLabel"
+            HorizontalAlignment="Left" Height="24" Margin="138,208,0,0" VerticalAlignment="Top" Width="108" ToolTip="Rating" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Label Content="Stock :" HorizontalAlignment="Left" Margin="7,242,0,0" VerticalAlignment="Top" Width="118" HorizontalContentAlignment="Right" Height="25" FontWeight="Bold"/>
+        <TextBlock Text="{Binding Stock}" x:Name="StockLabel"
+            HorizontalAlignment="Left" Height="24" Margin="138,247,0,0" VerticalAlignment="Top" Width="108" ToolTip="Stock" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Label Content="Brand :" HorizontalAlignment="Left" Margin="7,285,0,0" VerticalAlignment="Top" Width="118" HorizontalContentAlignment="Right" Height="29" FontWeight="Bold"/>
+        <TextBlock Text="{Binding Brand}" x:Name="BrandLabel"
+            HorizontalAlignment="Left" Height="24" Margin="138,290,0,0" VerticalAlignment="Top" Width="282" ToolTip="Brand" TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2"/>
+        <Image x:Name="ProductImageCtrl0" Source="{Binding Images[0]}" Grid.Column="1" HorizontalAlignment="Left" Height="166" Margin="184,81,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.503,0.517" Stretch="UniformToFill"/>
+        <Image x:Name="ProductImageCtrl2" Source="{Binding Images[2]}" Grid.Column="1" HorizontalAlignment="Left" Height="166" Margin="184,254,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.503,0.517" Stretch="UniformToFill"/>
+        <Image x:Name="ProductImageCtrl1" Source="{Binding Images[1]}" Grid.Column="1" HorizontalAlignment="Left" Height="166" Margin="360,81,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.503,0.517" Stretch="UniformToFill"/>
+        <Image x:Name="ProductImageCtrl3" Source="{Binding Images[3]}" Grid.Column="1" HorizontalAlignment="Left" Height="166" Margin="360,254,0,0" VerticalAlignment="Top" Width="166" RenderTransformOrigin="0.503,0.517" Stretch="UniformToFill"/>
+        <Button x:Name="PurshaseButton" Content="Purshase" HorizontalAlignment="Center" Height="35" Margin="0,362,0,0" VerticalAlignment="Top" Width="110" Click="PurshaseButton_Click" IsEnabled="False"/>
+
     </Grid>
 </Window>
